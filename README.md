@@ -8,8 +8,6 @@ Technology stack
 | what   |
 | ---------- |
 | React    | 
-| Redux     |
-| React-redux     | 
 | Redux-toolkit     | 
 | bootstrap    | 
 | React-router-dom    | 
