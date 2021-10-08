@@ -6,8 +6,6 @@ import './style.css';
 export const DashBoard = () => {
   //get data from redux
   const carsDetails = useSelector((state) => state.details.data);
-  console.log(carsDetails)
- 
   //create dashboard dynamically
   const getCardDetails = carsDetails.map((value) => {
     return (
@@ -27,7 +25,7 @@ export const DashBoard = () => {
             marginTop: '20px',
           }}
         >
-          poject
+          project
         </div>
         {getCardDetails}
       </div>
