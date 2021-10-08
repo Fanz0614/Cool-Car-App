@@ -1,35 +1,24 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import React from 'react';
+import { useSelector } from 'react-redux';
 import { Card } from './card';
-import { addCard } from '../../redux/appSlice';
-import { testData } from './testData';
 import './style.css';
 
 export const DashBoard = () => {
-  const dispatch = useDispatch();
-
-  const carsDetails = useSelector((state) => state.details);
-
+  //get data from redux
+  const carsDetails = useSelector((state) => state.details.data);
+  console.log(carsDetails)
+ 
+  //create dashboard dynamically
   const getCardDetails = carsDetails.map((value) => {
     return (
-      <div className="col-sm-4">
+      <div class="col-4">
         <Card value={value} />
       </div>
     );
   });
-
-  useEffect(() => {
-    if (carsDetails.length === 0) {
-      // Add dummy data
-      testData.forEach((item) => {
-        dispatch(addCard(item));
-      });
-    }
-  }, [carsDetails.length]);
-
   return (
-    <div className="container">
-      <div className="row" style={{ margin: '30px' }}>
+    <div class="container">
+      <div class="row" style={{ margin: '30px' }}>
         <div
           style={{
             fontFamily: 'Sans-serif',

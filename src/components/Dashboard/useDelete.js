@@ -1,9 +1,8 @@
 import { useDispatch } from 'react-redux';
-import { useHistory } from 'react-router';
-import { deleteCard } from '../redux/appSlice';
-
-// custom hook for dashboard component
-const useDelete = (value) => {
+import { deleteCard } from '../../redux/appslice';
+import { useHistory } from 'react-router-dom';
+//custom hook for dashboard component
+const useDelete = ({ value }) => {
   const dispatch = useDispatch();
   const history = useHistory();
   //nav to sepefic detail page use history,id and record state

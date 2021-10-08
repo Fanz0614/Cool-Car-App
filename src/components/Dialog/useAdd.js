@@ -1,9 +1,8 @@
 import { useState } from 'react';
 import { v1 as uuid } from 'uuid';
 import { useDispatch } from 'react-redux';
-import { addCard } from '../redux/appSlice';
-
-// useAdd hook for Dialog component
+import { addCard } from '../../redux/appslice';
+//useAdd hook for Dialog component
 const useAdd = () => {
   const [vehicle, setVehicle] = useState('');
   const [originPrice, setOriginPrice] = useState('');

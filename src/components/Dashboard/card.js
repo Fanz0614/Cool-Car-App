@@ -1,19 +1,21 @@
 import React from 'react';
-import useDelete from '../../hooks/useDelete';
+import useDelete from './useDelete';
 
 export const Card = ({ value }) => {
-  const { cardDelete, handleClick } = useDelete(value);
+  //get methods from useDelete Hook
+  const { cardDelete, handleClick } = useDelete({ value });
   return (
-    <div className="plan-card plan-one">
-      <div className="pricing-header" onClick={handleClick}>
-        <h4 className="plan-title">{value.vehicle}</h4>
-        <div className="plan-cost">${value.purchasePrice}</div>
-        <div className="plan-save">
+    //Card body
+    <div class="plan-card plan-one">
+      <div class="pricing-header" onClick={handleClick}>
+        <h4 class="plan-title">{value.vehicle}</h4>
+        <div class="plan-cost">${value.purchasePrice}</div>
+        <div class="plan-save">
           Save ${value.originPrice - value.purchasePrice}
         </div>
       </div>
-      <ul className="plan-features">
-        <li className="text-muted">
+      <ul class="plan-features">
+        <li class="text-muted">
           $<del>{value.originPrice}</del>
         </li>
         <li>{value.body}</li>
